@@ -14,23 +14,20 @@ import javax.servlet.http.HttpSessionListener;
 @Slf4j
 @WebListener
 public class OnLineListener implements HttpSessionListener {
-
-    /**
-     * 网站人数统计
-     */
-    public static int online=0;
+    public static int online;
 
     @Override
     public void sessionCreated(HttpSessionEvent se) {
-       log.error("online ++");
-       online++;
-       se.getSession().setAttribute("online",online);
+        online++;
+        log.info("session创建。。。");
+        se.getSession().setAttribute("online", online);
     }
 
     @Override
     public void sessionDestroyed(HttpSessionEvent se) {
-        log.error("online--");
         online--;
-        se.getSession().setAttribute("online",online);
+        log.info("session销毁。。。");
+        se.getSession().setAttribute("online", online);
     }
+
 }

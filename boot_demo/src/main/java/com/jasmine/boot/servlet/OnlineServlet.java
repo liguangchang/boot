@@ -9,33 +9,28 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 /**
  * boot整合servlet
  * @author guangchang
  * @create 2019-07-29 21:17
  **/
-@WebServlet(name = "myServlet",urlPatterns = "/myServlet")
 @Slf4j
-public class MyServlet extends HttpServlet {
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.setCharacterEncoding("utf-8");
-        resp.setContentType("text/html;charset=utf-8");
-        resp.getWriter().append("myServlet doGet");
-        resp.getWriter().append((char) OnLineListener.online);
-        log.error(String.valueOf(OnLineListener.online));
-        Integer online = (Integer) req.getSession().getAttribute("online");
-        log.error(online.toString());
-        log("doGet over");
-        resp.getWriter().append("在线人数："+online);
-
-    }
+@WebServlet(name="onlineServlet",urlPatterns="/online")
+public class OnlineServlet extends HttpServlet{
 
     @Override
-    protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        doGet(req,resp);
+    protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+        PrintWriter writer = res.getWriter();
+        writer.println("当前在线人数："+req.getSession().getAttribute("online"));
+        writer.println("当前在线人数："+OnLineListener.online);
+        log.info("online:"+OnLineListener.online);
+        log.info("session :"+req.getSession().getAttribute("online"));
+        writer.flush();
+        writer.close();
     }
+
 
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -55,7 +50,5 @@ public class MyServlet extends HttpServlet {
     public void init() throws ServletException {
         super.init();
         log("myServlet init");
-
-
     }
 }

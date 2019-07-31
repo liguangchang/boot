@@ -12,12 +12,13 @@ import java.io.IOException;
  * @create 2019-07-29 22:38
  **/
 @Slf4j
-@WebFilter(filterName = "myFilter",urlPatterns = "/filter")
+@WebFilter(filterName = "myFilter",urlPatterns = "/*")
 public class MyFilter implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         log.info("doFilter running");
         log.error("doFilter before");
+        servletResponse.setContentType("text/html;charset=UTF-8");
         filterChain.doFilter(servletRequest,servletResponse);
         log.error("doFilter after");
     }
