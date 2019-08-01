@@ -1,5 +1,7 @@
 package com.jasmine.boot;
 
+import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
@@ -11,9 +13,12 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
  **/
 @SpringBootApplication
 @ServletComponentScan(basePackages = "com.jasmine.boot")
+@MapperScan(basePackages = "com.jasmine.boot.mapper")
 public class BootApplication {
     public static void main(String[] args) {
-        SpringApplication.run(BootApplication.class, args);
+        SpringApplication springApplication = new SpringApplication(BootApplication.class);
+        springApplication.setBannerMode(Banner.Mode.OFF);
+        springApplication.run(args);
     }
 
     /**

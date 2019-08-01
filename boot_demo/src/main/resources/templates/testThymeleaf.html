@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>hello thymeleaf</h2>
+<h2><p th:text="'long time no see, ' + ${name} + '!'" /></h2>
+<h2>thymeleaf 语法</h2>
+<p th:text="text输出值"/>
+<p th:text="${text}"/>
+<input type="text" th:text="inputTextValue" th:value="${input}">
+<p th:text="${#strings.isEmpty(key)}"/>
+<p th:text="${#strings.concat(key,'key')}"/>
+<p th:text="${#strings.startsWith(key,'k')}"/>
+<p th:text="${#strings.endsWith(key,'e')}"/>
+<p th:text="${#strings.length(key)}"/>
+<p th:text="${#strings.indexOf(key,'l')}"/>
+<p th:text="${#strings.substring(key,3)}"/>
+<p th:text="${#strings.substring(key,3,5)}"/>
+<p th:text="${#strings.toUpperCase(key)}"/>
+<p th:text="${#strings.toLowerCase(key)}"/>
+
+<h2>Date</h2>
+<p th:text="${#dates.format(date)}"/>
+<p th:text="${#dates.format(date,'yyyy/MM/dd')}"/>
+<p th:text="${#dates.year(data)}"/>
+<p th:text="${#dates.month(date)}"/>
+<p th:text="${#dates.day(date)}"/>
+
+<h2>th:if</h2>
+<span>
+    <th:if="${sex}='男'">性别：男</th:if>
+    <th:if="${sex}='女'">性别：女</th:if>
+</span>
+
+<h2>th:switch</h2>
+<div th:switch="${id2}">
+        <span th:case="1">id为1</span>
+        <span th:case="2">id为2</span>
+        <span th:case="3">id为3</span>
+    </th:switch>
+</div>
+<h2>iterator</h2>
+<table border="1">
+    <tr>
+        <th>name</th>
+        <th>age</th>
+    </tr>
+    <tr th:each="t : ${test}">
+        <td th:text="${t.name}"></td>
+        <td th:text="${t.age}"></td>
+    </tr>
+</table>
+<table border="2">
+    <tr>
+        <th>name</th>
+        <th>age</th>
+    </tr>
+    <tr th:each="c : ${collection}">
+       <td th:text="${c.name}"></td>
+       <td th:text="${c.age}"></td>
+    </tr>
+</table>
+</body>
+</html>
