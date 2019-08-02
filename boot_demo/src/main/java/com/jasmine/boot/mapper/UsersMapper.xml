@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.jasmine.mapper.UsersMapper">
+<mapper namespace="com.jasmine.boot.mapper.UsersMapper">
     <insert id="insertUsers" parameterType="users">
 		insert into users(name,age) values(#{name},#{age})
 	</insert>

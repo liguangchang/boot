@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/boot_demo/boot.iml" filepath="$PROJECT_DIR$/boot_demo/boot.iml" />
       <module fileurl="file://$PROJECT_DIR$/boot_demo/boot_demo.iml" filepath="$PROJECT_DIR$/boot_demo/boot_demo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/idempotent/idempotent.iml" filepath="$PROJECT_DIR$/idempotent/idempotent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo/demo.iml" filepath="$PROJECT_DIR$/demo/demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/idempotent/idempotent.iml" filepath="$PROJECT_DIR$/idempotent/idempotent.iml" />
     </modules>
   </component>

@@ -8,19 +8,24 @@
         <outputRelativeToContentRoot value="true" />
         <module name="boot" />
         <module name="boot_demo" />
+        <module name="demo" />
         <module name="idempotent" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="boot" target="1.8" />
       <module name="boot_demo" target="1.8" />
+      <module name="demo" target="1.8" />
       <module name="idempotent" target="1.8" />
+      <module name="Programming_transaction" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Programming_transaction" options="-parameters" />
       <module name="boot" options="-parameters" />
       <module name="boot_demo" options="-parameters" />
+      <module name="demo" options="-parameters" />
       <module name="idempotent" options="-parameters" />
     </option>
   </component>
