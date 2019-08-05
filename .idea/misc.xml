@@ -6,6 +6,7 @@
         <option value="$PROJECT_DIR$/boot_demo/pom.xml" />
         <option value="$PROJECT_DIR$/idempotent/pom.xml" />
         <option value="$PROJECT_DIR$/demo/pom.xml" />
+        <option value="$PROJECT_DIR$/bootdubbo/pom.xml" />
       </list>
     </option>
   </component>
